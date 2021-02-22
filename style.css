@@ -1,0 +1,152 @@
+*{
+    box-sizing: border-box;
+}
+
+.clear{
+    clear:both;
+}
+.mobile{
+    display: none;
+}
+body{
+    background-color: yellow;
+    margin: 0;
+    font-size: 15px; 
+}
+#container{
+    background-color: #fff;
+    max-width: 1024px;
+    margin: auto;
+}
+/*
+    margin: 16px; haut&droite&bas&gauche
+    margin: 8px 0; haut&bas, gauche&droite 
+    margin: 8px 4px 0; haut, gauche&droite, bas 
+    margin: 8px 6px 4px 0; haut, droite, bas, gauche 
+*/
+header{
+    padding-top: 1px;/* hack CSS des marges débordantes */
+}
+footer{
+    padding: 1px 0;/* hack CSS des marges débordantes */
+}
+
+header img{
+    width: 100%;
+    vertical-align: bottom;/* hack CSS de la baseline des images */
+}
+main{
+    padding: 0 1em 1em;
+}
+main section{
+    display: flex;/* fait s'aligner son contenu DIRECT (enfants de premier niveau)*/
+    align-items: flex-start;/* annuler l'étirement vertical des éléments flexés */
+}
+
+main section article{ flex: 7; }
+main section aside{ 
+    flex: 3; 
+    padding: 1em;
+    margin-left: 1em;
+}
+
+article, aside{
+    text-align: justify;
+}
+
+nav{
+    padding: 1em 0;
+    border-bottom: 3px dashed #fff;
+}
+    
+nav a{
+    padding: 1em;
+    color: inherit;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+nav a:first-child{
+    background-color: #4e66a8;
+}
+
+article p:first-child{
+    margin-top: 0;
+    font-weight: bold;
+}
+
+#affiches div{
+    flex: 1;
+    margin: 0 10px;
+}
+
+#affiches div:first-child{
+    margin-left: 0;
+}
+#affiches div:last-child{
+    margin-right: 0;
+}
+
+#affiches div img{
+    width: 100%;
+}
+
+aside figure{
+    margin: 0 2em;
+}
+
+aside figure img{
+    width: 100%;
+    border: 1px solid #fff;
+}
+
+.block-blue{
+    background-color: #88a4f0;
+    color: #fff;
+}
+.center-text{
+    text-align: center;
+}
+
+footer{
+    background-color: #4e66a8;
+    color: #fff;
+}
+/* pour les ecran jusqua une largeur de 800px */
+@media screen and (max-width:800px){
+    .mobile{
+        display: block;
+    }
+    #burger{
+        float: left;
+        padding: 0.5em;
+    }
+    main{
+        padding: 0;
+    }
+    main h1{
+        padding: 0 1em;
+        text-align: center;
+    }
+    main article{
+        padding: 1em;
+    }
+    main section:not(#affiches){
+        display: block;
+    }
+    main section aside{
+        margin-top: 1em;
+        margin-left: 0;
+    }
+    main section aside figure{
+        float: left;
+        margin-left: 0;
+        width: 40%;
+    }
+    nav{
+        display: none;
+    }
+    nav a{
+        display: block;
+    }
+}
